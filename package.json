@@ -1,0 +1,38 @@
+{
+	"name": "@sudoo/wave",
+	"version": "1.0.0",
+	"description": ":honeybee: A responsive data modal",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/SudoDotDog/Sudoo-Wave.git"
+	},
+	"keywords": [
+		"Wave"
+	],
+	"author": "WMXPY",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/SudoDotDog/Sudoo-Wave/issues"
+	},
+	"homepage": "https://github.com/SudoDotDog/Sudoo-Wave#readme",
+	"devDependencies": {
+		"@sudoo/io": "^1.8.0",
+		"@sudoo/triforce": "^2.8.7"
+	},
+	"nyc": {
+		"extension": [
+			".ts"
+		],
+		"include": [
+			"script/**/*.ts",
+			"src/**/*.ts"
+		],
+		"instrument": true,
+		"reporter": [
+			"json",
+			"text-summary"
+		],
+		"report-dir": "coverage",
+		"sourceMap": true
+	}
+}
