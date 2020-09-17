@@ -11,6 +11,7 @@ export class Wave {
         return new Wave();
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     private constructor() {
 
     }
