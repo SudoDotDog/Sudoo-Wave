@@ -6,3 +6,11 @@
 [![downloads](https://img.shields.io/npm/dm/@sudoo/wave.svg)](https://www.npmjs.com/package/@sudoo/wave)
 
 :honeybee: A responsive data modal
+
+## Install
+
+```sh
+yarn add @sudoo/wave
+# Or
+npm install @sudoo/wave --save
+```
