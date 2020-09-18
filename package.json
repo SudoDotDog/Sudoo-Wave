@@ -15,6 +15,9 @@
 		"url": "https://github.com/SudoDotDog/Sudoo-Wave/issues"
 	},
 	"homepage": "https://github.com/SudoDotDog/Sudoo-Wave#readme",
+	"dependencies": {
+		"@sudoo/compare": "^1.0.0"
+	},
 	"devDependencies": {
 		"@sudoo/io": "^1.8.0",
 		"@sudoo/triforce": "^2.8.7"
