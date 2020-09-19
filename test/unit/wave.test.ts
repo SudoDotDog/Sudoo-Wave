@@ -16,7 +16,7 @@ describe('Given {Wave} Class', (): void => {
 
     it('should be able to construct', (): void => {
 
-        const wave: Wave = Wave.create();
+        const wave: Wave = Wave.create({});
 
         expect(wave).to.be.instanceOf(Wave);
     });

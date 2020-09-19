@@ -4,9 +4,9 @@
  * @description Wave
  */
 
-export class Wave<T extends Record<string, any>> {
+export class Wave<T extends Record<string, any> = any> {
 
-    public static create<T extends Record<string, any>>(initial: T): Wave<T> {
+    public static create<T extends Record<string, any> = any>(initial: T): Wave<T> {
 
         return new Wave<T>(initial);
     }
@@ -16,5 +16,9 @@ export class Wave<T extends Record<string, any>> {
     private constructor(initial: T) {
 
         this._data = initial;
+    }
+
+    public get data(): T {
+        return this._data;
     }
 }
