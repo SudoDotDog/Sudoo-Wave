@@ -20,6 +20,7 @@ export class Wave<T extends Record<string, any> = any> {
     private constructor(initial: T) {
 
         this._data = initial;
+        this._listeners = new Set<ListenerFunction<T>>();
     }
 
     public get length(): number {
