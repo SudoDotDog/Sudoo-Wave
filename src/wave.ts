@@ -22,6 +22,9 @@ export class Wave<T extends Record<string, any> = any> {
         this._data = initial;
     }
 
+    public get length(): number {
+        return this._listeners.size;
+    }
     public get data(): T {
         return this._data;
     }
@@ -29,6 +32,12 @@ export class Wave<T extends Record<string, any> = any> {
     public listen(listener: ListenerFunction<T>): this {
 
         this._listeners.add(listener);
+        return this;
+    }
+
+    public removeListener(listener: ListenerFunction<T>): this {
+
+        this._listeners.delete(listener);
         return this;
     }
 
