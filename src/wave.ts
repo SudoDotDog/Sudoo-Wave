@@ -5,6 +5,7 @@
  */
 
 import { compare, CompareResult } from "@sudoo/compare";
+import { ListenerFunction } from "./declare";
 
 export class Wave<T extends Record<string, any> = any> {
 
@@ -14,6 +15,7 @@ export class Wave<T extends Record<string, any> = any> {
     }
 
     private readonly _data: T;
+    private readonly _listeners: Set<ListenerFunction<T>>;
 
     private constructor(initial: T) {
 
@@ -22,6 +24,12 @@ export class Wave<T extends Record<string, any> = any> {
 
     public get data(): T {
         return this._data;
+    }
+
+    public listen(listener: ListenerFunction<T>): this {
+
+        this._listeners.add(listener);
+        return this;
     }
 
     public update(newData: T): CompareResult[] {
