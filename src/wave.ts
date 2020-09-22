@@ -14,13 +14,15 @@ export class Wave<T extends Record<string, any> = any> {
         return new Wave<T>(initial);
     }
 
-    private readonly _data: T;
     private readonly _listeners: Set<ListenerFunction<T>>;
+
+    private _data: T;
 
     private constructor(initial: T) {
 
-        this._data = initial;
         this._listeners = new Set<ListenerFunction<T>>();
+
+        this._data = initial;
     }
 
     public get length(): number {
@@ -46,6 +48,11 @@ export class Wave<T extends Record<string, any> = any> {
 
         const changes: CompareResult[] = compare(this._data, newData);
 
+        for (const listener of this._listeners) {
+            listener(changes, newData, this._data);
+        }
+
+        this._data = newData;
         return changes;
     }
 }
